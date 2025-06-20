@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.geometry.Insets?>
+<?import java.lang.String?>
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo.MainController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text="Список строительных проектов:" style="-fx-font-weight: bold;"/>
+
+    <ListView fx:id="projectList" VBox.vgrow="ALWAYS">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="ЖК Солнечный - В процессе"/>
+                <String fx:value="Офисное здание - Завершен"/>
+                <String fx:value="Детский сад - Планирование"/>
+                <String fx:value="ТЦ Облака - Завершён"/>
+                <String fx:value="ТЦ Лидер - Планирование"/>
+            </FXCollections>
+        </items>
+    </ListView>
+
+    <HBox spacing="10">
+        <Button text="Добавить проект" onAction="#addProject"/>
+        <Button text="Удалить проект" onAction="#removeProject"/>
+    </HBox>
+</VBox>
